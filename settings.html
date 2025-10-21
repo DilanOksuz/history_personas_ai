@@ -1,72 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Settings — Echoes of History</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>PersonaChat Settings</title>
+    <script>
+      (function () {
+        try {
+          const s = JSON.parse(localStorage.getItem("app:settings") || "{}");
+          document.documentElement.setAttribute(
+            "data-theme",
+            s.theme || "system"
+          );
+          const lang =
+            s.language ||
+            ((navigator.language || "tr").toLowerCase().startsWith("tr")
+              ? "tr"
+              : "en");
+          document.documentElement.setAttribute("lang", lang);
+        } catch (_) {
+          document.documentElement.setAttribute("data-theme", "system");
+          document.documentElement.setAttribute("lang", "tr");
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="./css/settings.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="logo"></span>
-        <strong>Echoes of History</strong>
-      </div>
+    <main class="settings-wrap">
+      <h1 class="page-title" data-i18n="settings.title">Settings</h1>
 
-      <nav class="nav">
-        <a href="">Home</a>
-        <a href="">Explore</a>
-        <a href="">My Echoes</a>
-        <a href="">Community</a>
-      </nav>
-
-      <div class="user">
-        <button class="icon-btn" aria-label="Settings">⚙️</button>
-        <img class="avatar" src="./assets/avatar.png" alt="User" />
-      </div>
-    </header>
-
-    <main class="settings">
-      <h1>SETTINGS</h1>
-
-      <section class="section">
-        <h2>Appearance</h2>
-        <div class="chip">Light</div>
-        <div class="chip">Dark</div>
-        <div class="chip">System</div>
-      </section>
-
-      <section class="section">
-        <h2>LANGUAGE</h2>
-        <div class="chip" id="languageChips" role="group">
-          <button class="chip">TR</button>
-          <button class="chip">EN</button>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>CHAT HISTORY</h2>
-
-        <div class="pref">
-          <span>Save Chat History</span>
-          <label class="switch">
-            <input id="SaveHistory" type="checkbox" />
-            <span class="track"><span class="thumb"></span></span>
-          </label>
-        </div>
-
-        <div class="pref">
-          <button id="clearHistory" class="btn-ghost">
-            CLEAR CHAT HISTORY
+      <section class="setting-section">
+        <h2 class="section-title" data-i18n="settings.appearance">
+          Appearance
+        </h2>
+        <div
+          class="chip-row"
+          id="appearanceChips"
+          role="group"
+          aria-label="Appearance"
+        >
+          <button class="chip" data-theme="light" data-i18n="settings.light">
+            Light
+          </button>
+          <button class="chip" data-theme="dark" data-i18n="settings.dark">
+            Dark
+          </button>
+          <button class="chip" data-theme="system" data-i18n="settings.auto">
+            Auto
           </button>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Accessibility</h2>
-        <div class="pref">
-          <span>Text-To-Speech</span>
+      <section class="setting-section">
+        <h2 class="section-title" data-i18n="settings.language">Language</h2>
+        <div
+          class="chip-row"
+          id="languageChips"
+          role="group"
+          aria-label="Language"
+        >
+          <button class="chip" data-lang="tr">TR</button>
+          <button class="chip" data-lang="en">EN</button>
+        </div>
+      </section>
+
+      <section class="setting-section">
+        <h2 class="section-title" data-i18n="settings.chat_history">
+          Chat History
+        </h2>
+
+        <div class="pref-card">
+          <span class="pref-label" data-i18n="settings.save_history"
+            >Save Chat History</span
+          >
+          <label class="switch">
+            <input id="saveHistory" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+          </label>
+        </div>
+
+        <button
+          id="clearHistory"
+          class="btn-ghost"
+          data-i18n="settings.clear_history"
+        >
+          Clear Chat History
+        </button>
+      </section>
+
+      <section class="setting-section">
+        <h2 class="section-title" data-i18n="settings.accessibility">
+          Accessibility
+        </h2>
+        <div class="pref-card">
+          <span class="pref-label" data-i18n="settings.tts"
+            >Text-to-Speech (Sesli okuma)</span
+          >
           <label class="switch">
             <input id="tts" type="checkbox" />
             <span class="track"><span class="thumb"></span></span>
@@ -75,6 +108,8 @@
       </section>
     </main>
 
-    <script type="module" src="./js/settings.js"></script>
+    <script src="https://unpkg.com/i18next@22.5.1/dist/umd/i18next.min.js"></script>
+
+    <script type="module" src="./js/settings-page.js"></script>
   </body>
 </html>

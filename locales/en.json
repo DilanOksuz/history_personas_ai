@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "my_echoes": "My Echoes",
+    "community": "Community"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "language": "Language",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto",
+    "chat_history": "Chat History",
+    "save_history": "Save Chat History",
+    "clear_history": "Clear Chat History",
+    "accessibility": "Accessibility",
+    "tts": "Text-to-Speech"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password"
+  }
+}

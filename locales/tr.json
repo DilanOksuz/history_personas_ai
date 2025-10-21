@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "explore": "Keşfet",
+    "my_echoes": "Anılarım",
+    "community": "Topluluk"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "appearance": "Görünüm",
+    "language": "Dil",
+    "light": "Açık",
+    "dark": "Koyu",
+    "auto": "Otomatik",
+    "chat_history": "Sohbet Geçmişi",
+    "save_history": "Sohbet Geçmişini Kaydet",
+    "clear_history": "Geçmişi Temizle",
+    "accessibility": "Erişilebilirlik",
+    "tts": "Text-to-Speech (Sesli okuma)"
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış Yap",
+    "email": "E-posta",
+    "password": "Şifre"
+  }
+}
