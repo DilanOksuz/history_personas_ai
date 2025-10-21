@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>PersonaChat Settings</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo"></span>
+        <strong>Echoes of History</strong>
+      </div>
+
+      <nav class="nav">
+        <a href="">Home</a>
+        <a href="">Explore</a>
+        <a href="">My Echoes</a>
+        <a href="">Community</a>
+      </nav>
+
+      <div class="user">
+        <button class="icon-btn" aria-label="Settings">⚙️</button>
+        <img class="avatar" src="./assets/avatar.png" alt="User" />
+      </div>
+    </header>
+
+    <main class="settings">
+      <h1>SETTINGS</h1>
+
+      <section class="section">
+        <h2>Appearance</h2>
+        <div class="chip">Light</div>
+        <div class="chip">Dark</div>
+        <div class="chip">System</div>
+      </section>
+
+      <section class="section">
+        <h2>LANGUAGE</h2>
+        <div class="chip" id="languageChips" role="group">
+          <button class="chip">TR</button>
+          <button class="chip">EN</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>CHAT HISTORY</h2>
+
+        <div class="pref">
+          <span>Save Chat History</span>
+          <label class="switch">
+            <input id="SaveHistory" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+          </label>
+        </div>
+
+        <div class="pref">
+          <button id="clearHistory" class="btn-ghost">
+            CLEAR CHAT HISTORY
+          </button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility</h2>
+        <div class="pref">
+          <span>Text-To-Speech</span>
+          <label class="switch">
+            <input id="tts" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/settings.js"></script>
+  </body>
+</html>
