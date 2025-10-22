@@ -37,6 +37,24 @@
     "forgot_password": "Şifreni mi unuttun?",
     "no_account": "Hesabın yok mu?",
     "signup_link": "Kaydol"
+  },
+   "signup": {
+    "title": "Kaydol",
+    "first_name_label": "Ad",
+    "first_name_placeholder": "Ad",
+    "last_name_label": "Soyad",
+    "last_name_placeholder": "Soyad",
+    "email_label": "E-posta",
+    "email_placeholder": "E-posta",
+    "password_label": "Şifre",
+    "password_placeholder": "Şifre",
+    "password2_label": "Şifre (Tekrar)",
+    "password2_placeholder": "Şifreyi tekrar gir",
+    "avatar_label": "Profil Fotoğrafı (opsiyonel)",
+    "avatar_placeholder": "Dosya seç",
+    "submit_btn": "Kaydol",
+    "have_account": "Zaten hesabın var mı?",
+    "signin_link": "Giriş Yap"
   }
 
 

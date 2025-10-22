@@ -35,5 +35,28 @@
     "forgot_password": "Forgot your password?",
     "no_account": "Don't have an account?",
     "signup_link": "Sign Up"
+  },
+  
+  "signup": {
+    "title": "Sign Up",
+    "first_name_label": "First name",
+    "first_name_placeholder": "First name",
+    "last_name_label": "Last name",
+    "last_name_placeholder": "Last name",
+    "email_label": "Email",
+    "email_placeholder": "Email",
+    "password_label": "Password",
+    "password_placeholder": "Password",
+    "password2_label": "Confirm Password",
+    "password2_placeholder": "Re-enter password",
+    "avatar_label": "Profile Photo (optional)",
+    "avatar_placeholder": "Choose file",
+    "submit_btn": "Sign Up",
+    "have_account": "Already have an account?",
+    "signin_link": "Sign In"
   }
+
+
+
+
 }
