@@ -1,4 +1,3 @@
-// ---------- storage & cookies ----------
 const storage = {
   get(k, fb = null) {
     try {
@@ -26,7 +25,6 @@ function getCookie(name) {
   return v ? decodeURIComponent(v.split("=")[1]) : null;
 }
 
-// ---------- settings model ----------
 const SETTINGS_KEY = "app:settings";
 const DEFAULTS = {
   theme: "system",
@@ -54,7 +52,6 @@ function saveSettings(s) {
   if (s.language) setCookie("app_lang", s.language);
 }
 
-// ---------- apply helpers ----------
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
 }
@@ -63,15 +60,10 @@ function applyLanguage(lang) {
   renderI18n();
 }
 
-// ---------- i18next init (JSON'ları /locales'ten yükle) ----------
 const initLng =
   getCookie("app_lang") ||
   localStorage.getItem("lang") ||
   loadSettings().language;
-
-// !!! ÖNEMLİ: HTML'de bu CDN'lerin var olduğundan emin ol:
-// <script src="https://unpkg.com/i18next@22.5.1/dist/umd/i18next.min.js"></script>
-// <script src="https://unpkg.com/i18next-http-backend@2.4.3/i18nextHttpBackend.min.js"></script>
 
 i18next.use(i18nextHttpBackend).init(
   {
@@ -88,7 +80,6 @@ i18next.use(i18nextHttpBackend).init(
   }
 );
 
-// ---------- data-i18n'leri doldur ----------
 function renderI18n() {
   if (!window.i18next) return;
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -97,11 +88,9 @@ function renderI18n() {
   });
 }
 
-// ---------- UI bağlama ----------
 (function init() {
   const s = loadSettings();
 
-  // Appearance chips
   const appearance = document.getElementById("appearanceChips");
   if (appearance) {
     setActiveChip(appearance, `[data-theme="${s.theme}"]`);
@@ -116,7 +105,6 @@ function renderI18n() {
     });
   }
 
-  // Language chips
   const language = document.getElementById("languageChips");
   if (language) {
     setActiveChip(language, `[data-lang="${s.language}"]`);
@@ -132,7 +120,6 @@ function renderI18n() {
     });
   }
 
-  // Switches
   const saveHistory = document.getElementById("saveHistory");
   const tts = document.getElementById("tts");
   if (saveHistory) {
@@ -150,16 +137,13 @@ function renderI18n() {
     });
   }
 
-  // Clear history (demo)
   document.getElementById("clearHistory")?.addEventListener("click", () => {
     alert(i18next.t("settings.clear_history"));
   });
 
-  // İlk uygulama
   applyTheme(s.theme);
   applyLanguage(i18next.language);
 
-  // System theme değişimini dinle (addEventListener / addListener uyumluluğu)
   const mql = window.matchMedia("(prefers-color-scheme: dark)");
   const handler = () => {
     const cur = loadSettings();

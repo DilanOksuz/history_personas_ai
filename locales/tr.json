@@ -24,5 +24,20 @@
     "logout": "Çıkış Yap",
     "email": "E-posta",
     "password": "Şifre"
+  },
+
+  
+  "login": {
+    "title": "Giriş Yap",
+    "email_label": "E-posta",
+    "email_placeholder": "E-posta",
+    "password_label": "Şifre",
+    "password_placeholder": "Şifre",
+    "submit_btn": "Giriş Yap",
+    "forgot_password": "Şifreni mi unuttun?",
+    "no_account": "Hesabın yok mu?",
+    "signup_link": "Kaydol"
   }
+
+
 }

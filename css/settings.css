@@ -19,7 +19,7 @@
   --switch-thumb: #fff;
 }
 
-.html[data-theme="light"] {
+html[data-theme="light"] {
   --bg: #f6f3ec;
   --surface: #f3efe7;
   --card: #fff;

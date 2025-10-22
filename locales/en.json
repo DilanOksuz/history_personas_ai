@@ -24,5 +24,16 @@
     "logout": "Logout",
     "email": "Email",
     "password": "Password"
+  },
+   "login": {
+    "title": "Sign In",
+    "email_label": "Email",
+    "email_placeholder": "Email",
+    "password_label": "Password",
+    "password_placeholder": "Password",
+    "submit_btn": "Sign In",
+    "forgot_password": "Forgot your password?",
+    "no_account": "Don't have an account?",
+    "signup_link": "Sign Up"
   }
 }
